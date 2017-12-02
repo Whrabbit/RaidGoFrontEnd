@@ -1,10 +1,10 @@
 import { Player } from "./player.model";
 
 export class Event{
-  constructor(private pokemonName: string,
-              private gymName: string,
-              private time: string,
-              private pastDate: Date,
-              private pastTime: string,
-              private players: Player[]){}
+  constructor(public pokemonName: string,
+              public gymName: string,
+              public time: string,
+              public pastDate: Date,
+              public pastTime: string,
+              public players: Player[]){}
 }
