@@ -10,7 +10,6 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 export class EventNewComponent implements OnInit {
   id: number;
   editMode = false;
-  recipeForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
               private router: Router) {
@@ -24,6 +23,9 @@ export class EventNewComponent implements OnInit {
           this.editMode = params['id'] != null;
         }
       );
+  }
+  onSubmit() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});

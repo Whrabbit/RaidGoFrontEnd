@@ -9,8 +9,8 @@ import { EventNewComponent } from "./event/event-new/event-new.component";
 
 const appRoutes: Routes = [
   {path: '', component: EventComponent, pathMatch: 'full', children: [
-  // {path: '', component: EventStartComponent},
-  {path: '', component: EventDetailComponent}
+  {path: '', component: EventStartComponent},
+  {path: ':id', component: EventDetailComponent}
 ]},
   {path: 'newevent', component: EventNewComponent}
 ];
