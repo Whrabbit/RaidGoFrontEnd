@@ -14,6 +14,7 @@ import { EventNewComponent } from './event/event-new/event-new.component';
 
 import { EventService } from "./event/event.service";
 import { AppRoutingModule } from "./app-routing.module";
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AppRoutingModule } from "./app-routing.module";
     EventDetailComponent,
     EventItemComponent,
     EventStartComponent,
-    EventNewComponent
+    EventNewComponent,
+    AccountComponent
 
   ],
   imports: [
