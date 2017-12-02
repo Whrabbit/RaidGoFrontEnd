@@ -1,12 +1,13 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Player} from "../model/player.model";
 import {Event} from "../model/event.model";
 
 
 @Injectable()
 export class EventService{
-  private event: Event[] = [
-    new Event(
+  eventSelected = new EventEmitter<Event>();
+  private eventList: Event[] = [
+    new Event('1',
       'pokemonname',
       'gymname',
       'time',
@@ -16,7 +17,7 @@ export class EventService{
         'password',
         12)]
     ),
-    new Event(
+    new Event('2',
       'pokemonname1',
       'gymname1',
       'time',
@@ -31,6 +32,19 @@ export class EventService{
   constructor(){}
 
   getEvents(){
-    return this.event.slice();
+    return this.eventList.slice();
+  }
+
+  getEvent(id: number){
+    return this.findbyId[id];
+
+  }
+
+  findbyId(id: string){
+    for(let i of this.eventList){
+      if(i.id === id){
+        return i;
+      }
+    }
   }
 }

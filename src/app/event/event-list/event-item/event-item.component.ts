@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Event} from "../../../model/event.model";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -10,9 +11,15 @@ import {Event} from "../../../model/event.model";
 export class EventItemComponent implements OnInit {
 
   @Input() event: Event;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onEventClicked(){
+    console.log(this.router.events)
+    this.router.navigate(['/event',  this.event.id]);
+
   }
 
 }

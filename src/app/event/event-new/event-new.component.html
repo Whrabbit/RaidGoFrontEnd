@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Naam van de Pokemon:</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="gym">Naam van de Gym:</label>
+              <input
+                type="text"
+                id="gym"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="time">Tijd:</label>
+              <input
+                type="text"
+                id="time"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+            >Event Aanmaken</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Annuleren</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

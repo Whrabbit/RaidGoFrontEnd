@@ -1,8 +1,9 @@
 <a
   style="cursor: pointer;"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  (click)="onEventClicked()">
     {{ event.pokemonName }} |
     {{ event.gymName }}
-    <p>{{ event.time }}</p>
+    <p>{{ event.id }}</p>
     <!--<p>{{ event.players[0].userName }}</p>-->
 </a>
