@@ -9,7 +9,6 @@ import { EventComponent } from "./event/event.component";
 import { EventListComponent } from './event/event-list/event-list.component';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
 import { EventItemComponent } from './event/event-list/event-item/event-item.component';
-import { EventStartComponent } from './event/event-start/event-start.component';
 import { EventNewComponent } from './event/event-new/event-new.component';
 
 import { EventService } from "./event/event.service";
@@ -25,7 +24,6 @@ import { AccountComponent } from './account/account.component';
     EventListComponent,
     EventDetailComponent,
     EventItemComponent,
-    EventStartComponent,
     EventNewComponent,
     AccountComponent
 
