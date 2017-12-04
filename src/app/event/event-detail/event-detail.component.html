@@ -1,18 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>
-        le detail component
-        {{ event.pokemonName }}
-      </h1>
+      <h2>
+        Pokemon: {{ event.pokemonName }}
+      </h2>
+      <h3>
+        Gym: {{ event.gym.gymName }}
+        Gymkleur: {{ event.gym.gymColor }}
+        <div class="pull-right">Tijd: {{ event.time }}</div>
+      </h3>
     </div>
   </div>
-  <div class="row">
-    <div class="row">
-      <div class="col-xs-12">
-        {{ event.gymName }}
-      </div>
-    </div>
 
+  <div class="row">
+    <div class="col-xs-12">
+    <h2>Spelers die meedoen:</h2>
+      <p *ngFor="let p of event.players">{{ p.userName }} <span class="pull-right">{{ p.level }}</span></p>
+    </div>
   </div>
+
 </div>

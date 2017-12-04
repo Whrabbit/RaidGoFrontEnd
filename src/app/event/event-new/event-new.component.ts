@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {FormArray, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
@@ -10,7 +10,14 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 export class EventNewComponent implements OnInit {
   id: number;
   editMode = false;
-
+  @ViewChild('f') eventForm: NgForm;
+  event = {
+    pokemonName: '',
+    gymName: '',
+    gymcolor: '',
+    time: '',
+  };
+  submitted = false;
   constructor(private route: ActivatedRoute,
               private router: Router) {
   }
@@ -25,7 +32,12 @@ export class EventNewComponent implements OnInit {
       );
   }
   onSubmit() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    // this.router.navigate(['../'], {relativeTo: this.route});
+    this.submitted = true;
+    this.event.pokemonName = this.eventForm.value.pokemonData.pokemonName;
+    this.event.gymName = this.eventForm.value.pokemonData.gymName;
+    this.event.gymcolor = this.eventForm.value.pokemonData.gymcolor;
+    this.event.time = this.eventForm.value.pokemonData.time;
   }
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});

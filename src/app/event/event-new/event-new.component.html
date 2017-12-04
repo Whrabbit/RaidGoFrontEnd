@@ -1,69 +1,106 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div
+          id="pokemon-data"
+          ngModelGroup="pokemonData"
+          #pokemonData="ngModelGroup">
 
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="name">Naam van de Pokemon:</label>
-              <input
-                type="text"
-                id="name"
-                class="form-control">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="name">Naam van de Pokemon:</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  name="pokemonName"
+                  ngModel
+                  required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="gym">Naam van de Gym:</label>
+                <input
+                  type="text"
+                  id="gym"
+                  class="form-control"
+                  name="gymName"
+                  ngModel
+                  required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="gymcolor">Kleur van de Gym:</label>
+                <select class="selectpicker"
+                        id="gymcolor"
+                        name="gymcolor"
+                        ngModel>
+                  <option value="" selected disabled>Kleur</option>
+                  <option value="blue">Blauw</option>
+                  <option value="red">Rood</option>
+                  <option value="yellow">Geel</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="time">Tijd:</label>
+                <input type="time"
+                       name="time"
+                       id="time"
+                       class="form-control"
+                       ngModel
+                       required
+                />
+              </div>
+            </div>
+          </div>
+          <p *ngIf="!pokemonData.valid && pokemonData.touched">Vul alle velden in!</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!f.valid"
+              >Event Aanmaken
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onCancel()">Annuleren
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="gym">Naam van de Gym:</label>
-              <input
-                type="text"
-                id="gym"
-                class="form-control">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="gymcolor">Kleur van de Gym:</label>
-              <select class="selectpicker" id="gymcolor">
-                <option value="" selected disabled>Kleur</option>
-                <option>Blauw</option>
-                <option>Rood</option>
-                <option>Geel</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label for="time">Tijd:</label>
-              <input type="time"
-                     name="time"
-                     id="time"
-                     class="form-control"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12">
-            <button
-              type="submit"
-              class="btn btn-success"
-            >Event Aanmaken</button>
-            <button type="button" class="btn btn-danger" (click)="onCancel()">Annuleren</button>
-          </div>
-        </div>
 
       </form>
     </div>
   </div>
+
+
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Naam van de Pokemon: {{ event.pokemonName }}</p>
+      <p>Naam van de Gym: {{ event.gymName }}</p>
+      <p>Kleur van de Gym: {{ event.gymcolor }}</p>
+      <p>Tijd: {{ event.time }}</p>
+    </div>
+  </div>
+
 </div>

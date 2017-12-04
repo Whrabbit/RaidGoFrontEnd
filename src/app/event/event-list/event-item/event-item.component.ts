@@ -17,7 +17,6 @@ export class EventItemComponent implements OnInit {
   }
 
   onEventClicked(){
-    console.log(this.router.events)
     this.router.navigate(['/event',  this.event.id]);
 
   }

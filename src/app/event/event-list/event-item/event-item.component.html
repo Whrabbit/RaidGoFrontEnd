@@ -3,7 +3,7 @@
   class="list-group-item clearfix"
   (click)="onEventClicked()">
     {{ event.pokemonName }} |
-    {{ event.gymName }}
+    {{ event.gym.gymName }} | {{ event.gym.gymColor }}
     <p class="pull-right">{{ event.time }}</p>
     <p>{{ event.players[0].userName }}</p>
 </a>
