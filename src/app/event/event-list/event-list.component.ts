@@ -17,7 +17,7 @@ export class EventListComponent implements OnInit {
     this.eventService.eventEmit
       .subscribe(
         (events) => {
-          this.events = events;
+            this.events = events;
         }
       )
     // this.events = this.eventService.getEvents();
