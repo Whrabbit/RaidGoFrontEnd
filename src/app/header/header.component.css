@@ -4,8 +4,20 @@ nav.navbar.navbar-inverse.bs-dark,
 .navbar{
   border-radius: 0;
 }
+.navbar-brand{
+  padding: 0px 10px;
+}
+.navbar-nav > li > a {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+div#bs-example-navbar-collapse-1 {
+  border-color: transparent ;
+}
 
-
+.bs-dark[_ngcontent-c1] .navbar-img[_ngcontent-c1] img[_ngcontent-c1] {
+  width: 60px;
+}
 .bs-dark.navbar-inverse {
   background-color: #222;
   border-color: #080808;

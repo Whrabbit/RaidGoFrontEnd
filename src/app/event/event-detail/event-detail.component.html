@@ -5,10 +5,10 @@
         Pokemon: {{ event.pokemonName }}
       </h2>
       <h3>
-        Gym: {{ event.gym.gymName }}
+        Gym: {{ event.gym[0].gymName }}
         <div class="pull-right">Tijd: {{ event.time }}</div>
         <br>
-        Gymkleur: {{ event.gym.gymColor }}
+        Gymkleur: {{ event.gym[0].gymColor }}
 
       </h3>
     </div>
@@ -17,7 +17,7 @@
   <div class="row">
     <div class="col-xs-12">
     <h2>Spelers die meedoen:</h2>
-      <p *ngFor="let p of event.players">{{ p.userName }} <span class="pull-right">{{ p.level }}</span></p>
+      <p *ngFor="let p of event.player">{{ p.username }} <span class="pull-right">{{ p.playerLevel }}</span></p>
     </div>
   </div>
 

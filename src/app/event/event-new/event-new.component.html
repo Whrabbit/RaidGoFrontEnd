@@ -46,9 +46,9 @@
                         name="gymcolor"
                         ngModel>
                   <option value="" selected disabled>Kleur</option>
-                  <option value="blue">Blauw</option>
-                  <option value="red">Rood</option>
-                  <option value="yellow">Geel</option>
+                  <option value="Blauw">Blauw</option>
+                  <option value="Rood">Rood</option>
+                  <option value="Geel">Geel</option>
                 </select>
               </div>
             </div>
@@ -95,7 +95,7 @@
   <hr>
   <div class="row" *ngIf="submitted">
     <div class="col-xs-12">
-      <h3>Your Data</h3>
+      <h3>Event is toegevoegd!</h3>
       <p>Naam van de Pokemon: {{ event.pokemonName }}</p>
       <p>Naam van de Gym: {{ event.gymName }}</p>
       <p>Kleur van de Gym: {{ event.gymcolor }}</p>

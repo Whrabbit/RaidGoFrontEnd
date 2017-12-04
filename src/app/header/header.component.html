@@ -6,15 +6,15 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" routerLink="">Logo</a>
+    <a class="navbar-brand" routerLink=""><img src="../../assets/header.png"/></a>
   </div>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active" routerLinkActive="active"><a routerLink="">Home<span class="sr-only">(current)</span></a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Events</a></li>
+      <li routerLinkActive="active"><a routerLink="/newevent">Event maken</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active"><a routerLink="/newevent">Event maken</a></li>
       <li class="dropdown" routerLinkActive="active">
         <a routerLink="/account" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image" />

@@ -4,7 +4,7 @@ export class Player{
 
   public event: Event;
 
-  constructor(public userName: string,
+  constructor(public username: string,
               public password: string,
-              public level: number){}
+              public playerLevel: number){}
 }

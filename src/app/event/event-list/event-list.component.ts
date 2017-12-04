@@ -13,7 +13,14 @@ export class EventListComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+    this.eventService.getEvents();
+    this.eventService.eventEmit
+      .subscribe(
+        (events) => {
+          this.events = events;
+        }
+      )
+    // this.events = this.eventService.getEvents();
   }
 
 }
