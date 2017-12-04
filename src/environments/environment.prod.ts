@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'https://raidgosql.herokuapp.com/'
+  serverUrl: 'https://raidgosql.herokuapp.com/api'
 };
