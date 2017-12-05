@@ -3,13 +3,15 @@ import {Player} from "../model/player.model";
 import {Event} from "../model/event.model";
 import {Gym} from "../model/gym.model";
 import { Http } from '@angular/http';
+import {Subject} from "rxjs/Subject";
 
 
 @Injectable()
 export class EventService{
   eventEmit = new EventEmitter<Event[]>();
-  // url = 'https://raidgosql.herokuapp.com/api/event';
-  url = 'http://localhost:3000/api/event';
+  url = 'https://raidgosql.herokuapp.com/api/event';
+  // url = 'http://localhost:3000/api/event';
+  startEdit = new Subject<string>();
 
   private eventList: Event[] = [];
 
@@ -49,7 +51,6 @@ export class EventService{
 
   getEvent(id: string){
     return this.findbyId(id);
-
   }
 
   findbyId(id: string){
@@ -63,6 +64,10 @@ export class EventService{
     console.log(event)
     return this.http.post(this.url, event);
 
+  }
+
+  updateEvent(id: string, event){
+    return this.http.put(this.url + '/' + id, event);
   }
 
 

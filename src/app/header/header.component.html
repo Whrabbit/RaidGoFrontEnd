@@ -1,6 +1,7 @@
 <nav class="navbar navbar-inverse bs-dark">
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -14,18 +15,22 @@
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Events</a></li>
       <li routerLinkActive="active"><a routerLink="/newevent">Event maken</a></li>
     </ul>
+
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown" routerLinkActive="active">
-        <a routerLink="/account" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image" />
+        <a routerLink="/account" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">
+          <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image"/>
         </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Profiel</a></li>
+        <ul class="dropdown-menu">
+          <li><a >Profiel</a></li>
+          <li><a [routerLink]="['event/myevents']">Mijn Events</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="#">Instellingen</a></li>
-          <li><a href="#">Uitloggen</a></li>
+          <li><a >Instellingen</a></li>
+          <li><a >Uitloggen</a></li>
         </ul>
       </li>
     </ul>
+
   </div>
 </nav>

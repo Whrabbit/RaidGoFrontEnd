@@ -1,9 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>
+      <h2 class="pull-left">
         Pokemon: {{ event.pokemonName }}
       </h2>
+      <div class="pull-right">
+      <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()" >
+        Event Wijzigen
+      </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
       <h3>
         Gym: {{ event.gym[0].gymName }}
         <div class="pull-right">Tijd: {{ event.time }}</div>
@@ -11,12 +20,23 @@
         Gymkleur: {{ event.gym[0].gymColor }}
 
       </h3>
+
     </div>
   </div>
 
+
+
   <div class="row">
     <div class="col-xs-12">
-    <h2>Spelers die meedoen:</h2>
+    <h2 class="pull-left">Spelers die meedoen:</h2>
+      <div class="pull-right">
+      <button class="btn btn-success">
+        +
+      </button>
+      <button class="btn btn-danger">
+        -
+      </button>
+      </div>
       <p *ngFor="let p of event.player">{{ p.username }} <span class="pull-right">{{ p.playerLevel }}</span></p>
     </div>
   </div>

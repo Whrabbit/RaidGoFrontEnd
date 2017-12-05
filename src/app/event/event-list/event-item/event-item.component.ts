@@ -11,14 +11,19 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class EventItemComponent implements OnInit {
 
   @Input() event: Event;
+  @Input() myEvent: boolean;
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.event)
+
   }
 
   onEventClicked(){
-    this.router.navigate(['/event',  this.event._id]);
+    if(this.myEvent){
+      this.router.navigate(['/myevent',  this.event._id]);
+    }else{
+      this.router.navigate(['/event',  this.event._id]);
+    }
 
   }
 

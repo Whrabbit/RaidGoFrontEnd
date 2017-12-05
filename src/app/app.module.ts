@@ -9,7 +9,7 @@ import { EventComponent } from "./event/event.component";
 import { EventListComponent } from './event/event-list/event-list.component';
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
 import { EventItemComponent } from './event/event-list/event-item/event-item.component';
-import { EventNewComponent } from './event/event-new/event-new.component';
+import { EventFormComponent } from './event/event-form/event-form.component';
 
 import { EventService } from "./event/event.service";
 import { AppRoutingModule } from "./app-routing.module";
@@ -24,7 +24,7 @@ import { AccountComponent } from './account/account.component';
     EventListComponent,
     EventDetailComponent,
     EventItemComponent,
-    EventNewComponent,
+    EventFormComponent,
     AccountComponent
 
   ],

@@ -1,11 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div
-          id="pokemon-data"
-          ngModelGroup="pokemonData"
-          #pokemonData="ngModelGroup">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
 
           <div class="row">
             <div class="col-xs-12">
@@ -44,7 +41,8 @@
                 <select class="selectpicker"
                         id="gymColor"
                         name="gymColor"
-                        ngModel>
+                        ngModel
+                        required>
                   <option value="" selected disabled>Kleur</option>
                   <option value="Blauw">Blauw</option>
                   <option value="Rood">Rood</option>
@@ -71,14 +69,13 @@
               </div>
             </div>
           </div>
-          <p *ngIf="!pokemonData.valid && pokemonData.touched">Vul alle velden in!</p>
           <div class="row">
             <div class="col-xs-12">
               <button
                 type="submit"
                 class="btn btn-success"
                 [disabled]="!f.valid"
-              >Event Aanmaken
+              >{{ ownEvent()? 'Event Opslaan' : 'Event Aanmaken'}}
               </button>
               <button
                 type="button"
@@ -87,7 +84,6 @@
               </button>
             </div>
           </div>
-        </div>
 
 
       </form>
@@ -100,8 +96,8 @@
     <div class="col-xs-12">
       <h3>Event is toegevoegd!</h3>
       <p>Naam van de Pokemon: {{ event.pokemonName }}</p>
-      <p>Naam van de Gym: {{ event.gymName }}</p>
-      <p>Kleur van de Gym: {{ event.gymcolor }}</p>
+      <p>Naam van de Gym: {{ event.gym.gymName }}</p>
+      <p>Kleur van de Gym: {{ event.gym.gymColor }}</p>
       <p>Tijd: {{ event.time }}</p>
     </div>
   </div>

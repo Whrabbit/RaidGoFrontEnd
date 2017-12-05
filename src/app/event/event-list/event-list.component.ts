@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Event } from "../../model/event.model";
 import {EventService} from "../event.service";
 
@@ -13,6 +13,8 @@ export class EventListComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
+
+
     this.eventService.getEvents();
     this.eventService.eventEmit
       .subscribe(
@@ -21,6 +23,10 @@ export class EventListComponent implements OnInit {
         }
       )
     // this.events = this.eventService.getEvents();
+  }
+
+  myEvent() {
+    return window.location.href.indexOf('event/myevents') !== -1;
   }
 
 }
