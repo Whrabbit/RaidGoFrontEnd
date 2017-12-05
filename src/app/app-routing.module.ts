@@ -9,7 +9,7 @@ import { AccountComponent } from "./account/account.component";
 
 const appRoutes: Routes = [
   {path: '', component: EventComponent, pathMatch: 'full'},
-  {path: 'event/myevents', component: EventComponent, pathMatch: 'full'},
+  {path: 'myevents', component: EventComponent, pathMatch: 'full'},
   {path: 'event/:id', component: EventDetailComponent, pathMatch: 'full'},
   {path: 'myevent/edit/:id', component: EventFormComponent, pathMatch: 'full'},
   {path: 'myevent/:id', component: EventDetailComponent, pathMatch: 'full'},

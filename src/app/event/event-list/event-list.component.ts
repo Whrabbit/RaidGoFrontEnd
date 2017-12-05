@@ -26,7 +26,7 @@ export class EventListComponent implements OnInit {
   }
 
   myEvent() {
-    return window.location.href.indexOf('event/myevents') !== -1;
+    return window.location.href.indexOf('myevents') !== -1;
   }
 
 }

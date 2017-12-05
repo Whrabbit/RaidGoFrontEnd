@@ -59,8 +59,7 @@ export class EventFormComponent implements OnInit {
       this.eventService.updateEvent(this.editedEvent._id, this.eventForm.value)
         .subscribe(
           (response) => {
-            this.router.navigate(['event/myevents']);
-            console.log(response)
+            this.router.navigate(['myevents']);
           }
         )
     } else {
@@ -74,7 +73,11 @@ export class EventFormComponent implements OnInit {
   }
 
   onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    if(this.ownEvent()){
+      this.router.navigate(['myevents']);
+    }else{
+      this.router.navigate(['../'], {relativeTo: this.route});
+    }
   }
 
   compareDates() {
