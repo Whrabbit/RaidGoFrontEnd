@@ -5,12 +5,21 @@ import { Http } from '@angular/http';
 @Injectable()
 export class AccountService{
 
-  url = 'https://raidgosql.herokuapp.com/api/user';
-  // url = 'http://localhost:3040/api/player';
+  // url = 'https://raidgosql.herokuapp.com/api/user';
+  url = 'http://localhost:3040/api/user';
+  loginUrl = 'http://localhost:3040/api/login';
 
   constructor(private http: Http){}
 
   addUser(player){
     return this.http.post(this.url, player);
+  }
+
+  loginUser(player){
+    return this.http.post(this.loginUrl, player);
+  }
+
+  isLoggedIn(){
+
   }
 }

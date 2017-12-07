@@ -22,15 +22,29 @@
            aria-haspopup="true" aria-expanded="false">
           Account
         </a>
+        <!--<ul class="dropdown-menu">-->
+          <!--<ng-template *ngIf="!accountService.isLoggedIn()">-->
+            <!--<li><a routerLink="/login">Inloggen</a></li>-->
+            <!--<li><a routerLink="/register">Registreren</a></li>-->
+          <!--</ng-template>-->
+          <!--<ng-template *ngIf="accountService.isLoggedIn()">-->
+            <!--<li><a>Profiel</a></li>-->
+            <!--<li><a [routerLink]="['myevents']">Mijn Events</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a>Instellingen</a></li>-->
+            <!--<li><a>Uitloggen</a></li>-->
+          <!--</ng-template>-->
+        <!--</ul>-->
         <ul class="dropdown-menu">
-          <li><a routerLink="/login">Inloggen</a></li>
-          <li><a routerLink="/register">Registreren</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a>Profiel</a></li>
-          <li><a [routerLink]="['myevents']">Mijn Events</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a>Instellingen</a></li>
-          <li><a>Uitloggen</a></li>
+            <li><a routerLink="/login">Inloggen</a></li>
+            <li><a routerLink="/register">Registreren</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a>Profiel</a></li>
+            <li><a [routerLink]="['myevents']">Mijn Events</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a>Instellingen</a></li>
+            <li><a>Uitloggen</a></li>
+
         </ul>
       </li>
     </ul>

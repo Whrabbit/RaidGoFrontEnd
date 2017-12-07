@@ -20,7 +20,6 @@ export class AccountNewComponent implements OnInit {
   }
   onSubmit() {
     let postAccount = this.accountForm.value;
-    console.log(this.accountForm.value)
     this.accountService.addUser(postAccount)
       .subscribe(
         (response) => {
