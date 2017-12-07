@@ -14,6 +14,7 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
+
     this.router.navigate(['myevent/'], {relativeTo: this.route});
   }
   onCancel() {

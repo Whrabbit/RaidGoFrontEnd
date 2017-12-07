@@ -6,5 +6,6 @@ export class Player{
 
   constructor(public username: string,
               public password: string,
-              public playerLevel: number){}
+              public playerLevel: number,
+              public gymColor: string){}
 }

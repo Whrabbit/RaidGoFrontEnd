@@ -15,6 +15,7 @@ import { EventService } from "./event/event.service";
 import { AppRoutingModule } from "./app-routing.module";
 import { AccountComponent } from './account/account.component';
 import { AccountNewComponent } from './account/account-new/account-new.component';
+import {AccountService} from "./account/account.service";
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { AccountNewComponent } from './account/account-new/account-new.component
     FormsModule,
     AppRoutingModule
   ],
-  providers: [EventService],
+  providers: [EventService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

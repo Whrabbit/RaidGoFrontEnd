@@ -1,16 +1,13 @@
-import {EventEmitter, Injectable} from '@angular/core';
-import {Player} from "../model/player.model";
-import {Event} from "../model/event.model";
-import {Gym} from "../model/gym.model";
+import { EventEmitter, Injectable } from '@angular/core';
+import { Event } from "../model/event.model";
 import { Http } from '@angular/http';
-import {Subject} from "rxjs/Subject";
 
 
 @Injectable()
 export class EventService{
   eventEmit = new EventEmitter<Event[]>();
   url = 'https://raidgosql.herokuapp.com/api/event';
-  // url = 'http://localhost:3000/api/event';
+  // url = 'http://localhost:3040/api/event';
 
   private eventList: Event[] = [];
 
