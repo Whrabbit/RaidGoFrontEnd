@@ -18,11 +18,14 @@
 
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown" routerLinkActive="active">
-        <a routerLink="/account" class="dropdown-toggle" data-toggle="dropdown" role="button"
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
            aria-haspopup="true" aria-expanded="false">
           Account
         </a>
         <ul class="dropdown-menu">
+          <li><a routerLink="/login">Inloggen</a></li>
+          <li><a routerLink="/register">Registreren</a></li>
+          <li role="separator" class="divider"></li>
           <li><a>Profiel</a></li>
           <li><a [routerLink]="['myevents']">Mijn Events</a></li>
           <li role="separator" class="divider"></li>

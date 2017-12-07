@@ -6,6 +6,7 @@ import { EventComponent } from "./event/event.component";
 import { EventDetailComponent } from './event/event-detail/event-detail.component';
 import { EventFormComponent } from "./event/event-form/event-form.component";
 import { AccountComponent } from "./account/account.component";
+import {AccountNewComponent} from "./account/account-new/account-new.component";
 
 const appRoutes: Routes = [
   {path: '', component: EventComponent, pathMatch: 'full'},
@@ -14,7 +15,9 @@ const appRoutes: Routes = [
   {path: 'myevent/edit/:id', component: EventFormComponent, pathMatch: 'full'},
   {path: 'myevent/:id', component: EventDetailComponent, pathMatch: 'full'},
   {path: 'newevent', component: EventFormComponent},
-  {path: 'account', component: AccountComponent}
+  {path: 'login', component: AccountComponent},
+  {path: 'register', component: AccountNewComponent}
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

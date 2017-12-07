@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="userName">Gebruikersnaam:</label>
+              <input
+                type="text"
+                id="userName"
+                class="form-control"
+                name="userName"
+                ngModel
+                required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="password">Wachtwoord:</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                name="password"
+                ngModel
+                required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="password-repeat">Herhaal Wachtwoord:</label>
+              <input
+                type="password"
+                id="password-repeat"
+                class="form-control"
+                name="password-repeat"
+                ngModel
+                required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="level">Level Trainer Account:</label>
+              <input
+                type="number"
+                id="level"
+                class="form-control"
+                name="level"
+                ngModel
+                required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="gymColor">Kleur van de Gym:</label>
+              <select class="selectpicker"
+                      id="gymColor"
+                      name="gymColor"
+                      ngModel
+                      required>
+                <option value="" selected disabled>Kleur</option>
+                <option value="Blauw">Blauw</option>
+                <option value="Rood">Rood</option>
+                <option value="Geel">Geel</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!f.valid"
+            >Registreren</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Annuleren</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
