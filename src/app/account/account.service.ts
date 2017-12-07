@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class AccountService{
 
-  url = 'https://raidgosql.herokuapp.com/';
+  url = 'https://raidgosql.herokuapp.com/api/user';
   // url = 'http://localhost:3040/api/player';
 
   constructor(private http: Http){}

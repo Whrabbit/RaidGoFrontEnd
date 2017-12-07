@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class EventService{
   eventEmit = new EventEmitter<Event[]>();
-  url = 'https://raidgosql.herokuapp.com/api/event';
+   url = 'https://raidgosql.herokuapp.com/api/event';
   // url = 'http://localhost:3040/api/event';
 
   private eventList: Event[] = [];
