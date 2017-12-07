@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Event } from "../../model/event.model";
 import {EventService} from "../event.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-event-list',
@@ -10,7 +11,8 @@ import {EventService} from "../event.service";
 export class EventListComponent implements OnInit {
   events: Event[];
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService,
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -22,11 +24,13 @@ export class EventListComponent implements OnInit {
             this.events = events;
         }
       )
-    // this.events = this.eventService.getEvents();
   }
 
   myEvent() {
     return window.location.href.indexOf('myevents') !== -1;
+  }
+  onClick(){
+    this.router.navigate(['newevent']);
   }
 
 }

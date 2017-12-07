@@ -5,7 +5,7 @@ export class Event{
   constructor(public _id: string,
               public pokemonName: string,
               public gym: Gym,
-              public time: string,
+              public time: Date,
               public pastDate: Date,
               public player: Player[]){}
 }

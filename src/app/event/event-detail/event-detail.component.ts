@@ -10,11 +10,9 @@ import {Player} from "../../model/player.model";
   styleUrls: ['./event-detail.component.css']
 })
 export class EventDetailComponent implements OnInit {
-
+  @Input() myEvent: boolean;
   event: Event;
   id: string;
-  players: Player[];
-  @Input() myEvent: boolean;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -26,7 +24,6 @@ export class EventDetailComponent implements OnInit {
         this.event = this.eventService.getEvent(Params['id']);
       });
 
-    console.log(this.ownEvent())
   }
 
   onEditEvent(id: string){

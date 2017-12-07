@@ -4,86 +4,86 @@
       <form (ngSubmit)="onSubmit()" #f="ngForm">
 
 
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <label for="name">Naam van de Pokemon:</label>
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  name="pokemonName"
-                  ngModel
-                  required>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Naam van de Pokemon:</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                name="pokemonName"
+                ngModel
+                required>
             </div>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <label for="gymName">Naam van de Gym:</label>
-                <input
-                  type="text"
-                  id="gymName"
-                  class="form-control"
-                  name="gymName"
-                  ngModel
-                  required>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="gymName">Naam van de Gym:</label>
+              <input
+                type="text"
+                id="gymName"
+                class="form-control"
+                name="gymName"
+                ngModel
+                required>
             </div>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <label for="gymColor">Kleur van de Gym:</label>
-                <select class="selectpicker"
-                        id="gymColor"
-                        name="gymColor"
-                        ngModel
-                        required>
-                  <option value="" selected disabled>Kleur</option>
-                  <option value="Blauw">Blauw</option>
-                  <option value="Rood">Rood</option>
-                  <option value="Geel">Geel</option>
-                </select>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="gymColor">Kleur van de Gym:</label>
+              <select class="selectpicker"
+                      id="gymColor"
+                      name="gymColor"
+                      ngModel
+                      required>
+                <option value="" selected disabled>Kleur</option>
+                <option value="Blauw">Blauw</option>
+                <option value="Rood">Rood</option>
+                <option value="Geel">Geel</option>
+              </select>
             </div>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <label for="time"
-                       >Tijd:</label>
-                <input type="time"
-                       name="time"
-                       id="time"
-                       class="form-control"
-                       ngModel
-                       required
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="time"
+              >Tijd:</label>
+              <input type="time"
+                     name="time"
+                     id="time"
+                     class="form-control"
+                     ngModel
+                     required
 
-                />
+              />
 
-              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <button
-                type="submit"
-                class="btn btn-success"
-                [disabled]="!f.valid"
-              >{{ ownEvent()? 'Event Opslaan' : 'Event Aanmaken'}}
-              </button>
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="onCancel()">Annuleren
-              </button>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!f.valid"
+            >{{ ownEvent()? 'Event Opslaan' : 'Event Aanmaken'}}
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onCancel()">Annuleren
+            </button>
           </div>
+        </div>
 
 
       </form>

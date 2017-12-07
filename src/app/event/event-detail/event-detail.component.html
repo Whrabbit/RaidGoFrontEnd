@@ -15,7 +15,7 @@
     <div class="col-xs-12">
       <h3>
         Gym: {{ event.gym[0].gymName }}
-        <div class="pull-right">Tijd: {{ event.time }}</div>
+        <div class="pull-right">Tijd: {{ event.time | date: 'H:mm' }}</div>
         <br>
         Gymkleur: {{ event.gym[0].gymColor }}
 

@@ -11,7 +11,6 @@ export class EventService{
   eventEmit = new EventEmitter<Event[]>();
   url = 'https://raidgosql.herokuapp.com/api/event';
   // url = 'http://localhost:3000/api/event';
-  startEdit = new Subject<string>();
 
   private eventList: Event[] = [];
 
@@ -61,9 +60,7 @@ export class EventService{
     }
   }
   addEvent(event){
-    console.log(event)
     return this.http.post(this.url, event);
-
   }
 
   updateEvent(id: string, event){

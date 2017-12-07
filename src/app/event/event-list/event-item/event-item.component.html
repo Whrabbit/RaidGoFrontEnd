@@ -4,7 +4,7 @@
   (click)="onEventClicked()">
     {{ event.pokemonName }} |
     {{ event.gym[0].gymName }} | {{ event.gym[0].gymColor }}
-    <span class="pull-right">{{ event.time }}</span>
+    <span class="pull-right">{{ event.time | date: 'H:mm' }}</span>
     <br>
     <button class="btn btn-success pull-right no-padding">+</button>
 </a>
