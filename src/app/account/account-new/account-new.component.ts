@@ -23,7 +23,7 @@ export class AccountNewComponent implements OnInit {
     this.accountService.addUser(postAccount)
       .subscribe(
         (response) => {
-          this.router.navigate(['login'], {relativeTo: this.route});
+          this.router.navigate(['login']);
         }
       )
   }
