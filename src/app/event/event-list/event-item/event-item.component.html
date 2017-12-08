@@ -6,5 +6,5 @@
     {{ event.gym[0].gymName }} | {{ event.gym[0].gymColor }}
     <span class="pull-right">{{ event.time | date: 'H:mm' }}</span>
     <br>
-    <button class="btn btn-success pull-right no-padding">+</button>
+    <button class="btn btn-success pull-right no-padding" *ngIf="loggedIn">+</button>
 </a>

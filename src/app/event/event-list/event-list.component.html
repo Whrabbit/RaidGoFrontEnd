@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-success" (click)="onClick()">Event maken</button>
-      <hr>
+      <button class="btn btn-success" (click)="onClick()" *ngIf="loggedIn">Event maken</button>
+      <hr *ngIf="loggedIn">
       <app-event-item
       *ngFor="let e of events"
       [event]="e" [myEvent]="myEvent()"></app-event-item>

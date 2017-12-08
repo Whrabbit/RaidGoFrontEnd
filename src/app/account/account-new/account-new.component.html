@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-
+        <p *ngIf="!f.valid && f.touched">Vul alle velden in!</p>
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">

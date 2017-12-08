@@ -1,9 +1,8 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {FormArray, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import { NgForm} from '@angular/forms';
+import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
 import {Event} from '../../model/event.model';
-import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-event-new',
@@ -50,6 +49,7 @@ export class EventFormComponent implements OnInit {
 
       },1)
     }
+
   }
 
   onSubmit() {
@@ -138,5 +138,7 @@ export class EventFormComponent implements OnInit {
   ownEvent() {
     return window.location.href.indexOf('myevent/edit') !== -1;
   }
+
+
 
 }

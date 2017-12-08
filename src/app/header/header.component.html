@@ -13,38 +13,25 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Events</a></li>
-      <li routerLinkActive="active"><a routerLink="/newevent">Event maken</a></li>
+      <li routerLinkActive="active"><a routerLink="/newevent" *ngIf="loggedIn">Event maken</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown" routerLinkActive="active">
         <a class="dropdown-toggle" data-toggle="dropdown" role="button"
-           aria-haspopup="true" aria-expanded="false">
+           aria-haspopup="true" aria-expanded="false" id="dropdown">
           Account
         </a>
-        <!--<ul class="dropdown-menu">-->
-          <!--<ng-template *ngIf="!accountService.isLoggedIn()">-->
-            <!--<li><a routerLink="/login">Inloggen</a></li>-->
-            <!--<li><a routerLink="/register">Registreren</a></li>-->
-          <!--</ng-template>-->
-          <!--<ng-template *ngIf="accountService.isLoggedIn()">-->
-            <!--<li><a>Profiel</a></li>-->
-            <!--<li><a [routerLink]="['myevents']">Mijn Events</a></li>-->
-            <!--<li role="separator" class="divider"></li>-->
-            <!--<li><a>Instellingen</a></li>-->
-            <!--<li><a>Uitloggen</a></li>-->
-          <!--</ng-template>-->
-        <!--</ul>-->
-        <ul class="dropdown-menu">
-            <li><a routerLink="/login">Inloggen</a></li>
-            <li><a routerLink="/register">Registreren</a></li>
+        <ul class="dropdown-menu" *ngIf="!loggedIn">
+            <li><a routerLink="/login" style="cursor:pointer;">Inloggen</a></li>
+            <li><a routerLink="/register" style="cursor:pointer;">Registreren</a></li>
+        </ul>
+        <ul class="dropdown-menu" *ngIf="loggedIn">
+            <li><a style="cursor:pointer;">Profiel</a></li>
+            <li><a [routerLink]="['myevents']" style="cursor:pointer;">Mijn Events</a></li>
             <li role="separator" class="divider"></li>
-            <li><a>Profiel</a></li>
-            <li><a [routerLink]="['myevents']">Mijn Events</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a>Instellingen</a></li>
-            <li><a>Uitloggen</a></li>
-
+            <li><a style="cursor:pointer;">Instellingen</a></li>
+            <li><a (click)="onLogout()" style="cursor:pointer;">Uitloggen</a></li>
         </ul>
       </li>
     </ul>

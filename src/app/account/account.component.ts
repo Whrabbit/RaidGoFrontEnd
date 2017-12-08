@@ -25,18 +25,17 @@ export class AccountComponent implements OnInit {
     this.accountService.loginUser(loginAccount)
       .subscribe(
         (response) => {
-          if (response.status === 200){
-            this.router.navigate(['myevents']);
-
+          if (response.json().authentication === true){
+            this.accountService.loggedIn = true;
+            this.accountService.loginEvent.emit(true);
+            this.router.navigate(['../']);
           } else {
             this.wrongPassword = true;
           }
-        }
-      )
+        });
   }
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
-
 
 }

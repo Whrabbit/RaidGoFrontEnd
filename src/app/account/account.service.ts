@@ -1,9 +1,10 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Player } from "../model/player.model";
 import { Http } from '@angular/http';
 
 @Injectable()
 export class AccountService{
+  loginEvent = new EventEmitter<boolean>();
+  loggedIn: boolean = false;
 
   url = 'https://raidgosql.herokuapp.com/api/user';
   loginUrl = 'https://raidgosql.herokuapp.com/api/login';
@@ -21,7 +22,8 @@ export class AccountService{
     return this.http.post(this.loginUrl, player);
   }
 
-  isLoggedIn(){
-
+  logOut() {
+    this.loggedIn = false;
+    this.loginEvent.emit(false);
   }
 }

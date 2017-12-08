@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Event} from "../../../model/event.model";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AccountService} from "../../../account/account.service";
 
 
 @Component({
@@ -12,10 +13,16 @@ export class EventItemComponent implements OnInit {
 
   @Input() event: Event;
   @Input() myEvent: boolean;
-  constructor(private router: Router) { }
+  loggedIn = false;
+  constructor(private router: Router,
+              private accountService: AccountService) { }
 
   ngOnInit() {
-
+    this.loggedIn = this.accountService.loggedIn;
+    this.accountService.loginEvent
+      .subscribe((result) => {
+        this.loggedIn = result;
+      });
   }
 
   onEventClicked(){
