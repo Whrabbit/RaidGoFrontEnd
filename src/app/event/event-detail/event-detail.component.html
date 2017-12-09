@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="pull-left">
-        Pokemon: {{ event.pokemonName }}
+        <span [colorDir]="'pink'">Pokemon: {{ event.pokemonName }}</span>
       </h2>
       <div class="pull-right">
         <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()">
@@ -17,7 +17,9 @@
         Gym: {{ event.gym[0].gymName }}
         <div class="pull-right">Tijd: {{ event.time | date: 'H:mm' }}</div>
         <br>
-        Gymkleur: {{ event.gym[0].gymColor }}
+        Gymkleur:
+        {{ event.gym[0].gymColor }}
+
 
       </h3>
 

@@ -6,10 +6,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="userName">Gebruikersnaam:</label>
+              <label for="username">Gebruikersnaam:</label>
               <input
                 type="text"
-                id="userName"
+                id="username"
                 class="form-control"
                 name="username"
                 ngModel
@@ -87,8 +87,9 @@
               type="submit"
               class="btn btn-success"
               [disabled]="!f.valid"
-            >Registreren</button>
+            >{{ ownAccount()? 'Accountgegevens Opslaan' : 'Registreren'}}</button>
             <button type="button" class="btn btn-danger" (click)="onCancel()">Annuleren</button>
+            <button type="button" class="btn btn-warning" (click)="onDelete()" *ngIf="loggedIn">Account Verwijderen</button>
           </div>
         </div>
 

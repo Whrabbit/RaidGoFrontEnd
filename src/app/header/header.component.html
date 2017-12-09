@@ -27,10 +27,9 @@
             <li><a routerLink="/register" style="cursor:pointer;">Registreren</a></li>
         </ul>
         <ul class="dropdown-menu" *ngIf="loggedIn">
-            <li><a style="cursor:pointer;">Profiel</a></li>
             <li><a [routerLink]="['myevents']" style="cursor:pointer;">Mijn Events</a></li>
             <li role="separator" class="divider"></li>
-            <li><a style="cursor:pointer;">Instellingen</a></li>
+            <li><a [routerLink]="['account/settings']" style="cursor:pointer;">Instellingen</a></li>
             <li><a (click)="onLogout()" style="cursor:pointer;">Uitloggen</a></li>
         </ul>
       </li>

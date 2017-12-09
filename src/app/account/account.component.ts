@@ -39,4 +39,8 @@ export class AccountComponent implements OnInit {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
+  onRegistration(){
+    this.router.navigate(['register']);
+  }
+
 }

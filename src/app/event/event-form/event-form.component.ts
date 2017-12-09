@@ -12,6 +12,7 @@ import {Event} from '../../model/event.model';
 export class EventFormComponent implements OnInit {
   @ViewChild('f') eventForm: NgForm;
   editedEvent: Event;
+  time = '';
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -66,7 +67,6 @@ export class EventFormComponent implements OnInit {
     } else {
       let postEvent = this.eventForm.value;
       postEvent.time = this.getFullDate(this.eventForm.value.time);
-
 
       this.eventService.addEvent(postEvent)
         .subscribe(

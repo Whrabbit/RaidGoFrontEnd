@@ -14,10 +14,10 @@ import { EventFormComponent } from './event/event-form/event-form.component';
 import { EventService } from "./event/event.service";
 import { AppRoutingModule } from "./app-routing.module";
 import { AccountComponent } from './account/account.component';
-import { AccountNewComponent } from './account/account-new/account-new.component';
-import {AccountService} from "./account/account.service";
+import { AccountFormComponent } from './account/account-form/account-form.component';
+import { AccountService } from "./account/account.service";
 import { EventDetailItemComponent } from './event/event-detail/event-detail-item/event-detail-item.component';
-
+import { ColorDirective } from "./directives/color.directive";
 
 @NgModule({
   declarations: [
@@ -29,8 +29,9 @@ import { EventDetailItemComponent } from './event/event-detail/event-detail-item
     EventItemComponent,
     EventFormComponent,
     AccountComponent,
-    AccountNewComponent,
-    EventDetailItemComponent
+    AccountFormComponent,
+    EventDetailItemComponent,
+    ColorDirective
 
   ],
   imports: [

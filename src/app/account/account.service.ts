@@ -10,14 +10,22 @@ export class AccountService{
 
   url = 'https://raidgosql.herokuapp.com/api/user';
   loginUrl = 'https://raidgosql.herokuapp.com/api/login';
-  //
+
   // url = 'http://localhost:3040/api/user';
   // loginUrl = 'http://localhost:3040/api/login';
 
   constructor(private http: Http){}
 
+  getAccount(id: string){
+    return this.http.get(this.url + '/' + id)
+  }
+
   addUser(player){
     return this.http.post(this.url, player);
+  }
+
+  updateUser(id: string, player){
+    return this.http.put(this.url + '/' + id, player);
   }
 
   loginUser(player){
@@ -27,5 +35,8 @@ export class AccountService{
   logOut() {
     this.loggedIn = false;
     this.loginEvent.emit(false);
+  }
+  deleteUser(id: string){
+    return this.http.delete(this.url + '/' + id);
   }
 }
