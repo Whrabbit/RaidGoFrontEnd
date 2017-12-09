@@ -6,34 +6,15 @@ import { Http } from '@angular/http';
 @Injectable()
 export class EventService{
   eventEmit = new EventEmitter<Event[]>();
+  event;
+  
   url = 'https://raidgosql.herokuapp.com/api/event';
+  urlPop = 'https://raidgosql.herokuapp.com/api/event';
+
   // url = 'http://localhost:3040/api/event';
+  // urlPop = 'http://localhost:3040/api/event/rp';
 
   private eventList: Event[] = [];
-
-  // private eventList: Event[] = [
-  //   new Event('1',
-  //     'pokemonname',
-  //     new Gym('Speeltuin', 'Blauw'),
-  //     'time',
-  //     new Date(2,12,2017),
-  //     [new Player('player 3',
-  //       'password',
-  //       12),
-  //       new Player('player 2',
-  //         'password',
-  //         36)]
-  //   ),
-  //   new Event('2',
-  //     'pokemonname1',
-  //     new Gym('Waterfontein', 'Rood'),
-  //     'time',
-  //     new Date(2,12,2017),
-  //     [new Player('playername',
-  //       'password',
-  //       12)]
-  //   )
-  // ];
 
   constructor(private http: Http){}
 
@@ -41,7 +22,7 @@ export class EventService{
     this.http.get(this.url)
       .subscribe((events) => {
        this.eventList = events.json();
-       this.eventEmit.emit(this.eventList.slice())
+       this.eventEmit.emit(this.eventList.slice());
       })
   }
 
@@ -56,12 +37,25 @@ export class EventService{
       }
     }
   }
+
   addEvent(event){
     return this.http.post(this.url, event);
   }
 
   updateEvent(id: string, event){
     return this.http.put(this.url + '/' + id, event);
+  }
+
+  getEventWithPlayers(id: string){
+    return this.http.get(this.url + '/' + id);
+  }
+
+  addPlayer(id: string, player, event){
+    return this.http.post(this.url + '/' + id, {event: event, playerId: player.id});
+  }
+
+  removePlayer(id: string, player, event){
+    return this.http.put(this.urlPop + '/' + id, {event: event, playerId: player.id});
   }
 
 

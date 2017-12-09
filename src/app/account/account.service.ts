@@ -5,6 +5,8 @@ import { Http } from '@angular/http';
 export class AccountService{
   loginEvent = new EventEmitter<boolean>();
   loggedIn: boolean = false;
+  user;
+
 
   url = 'https://raidgosql.herokuapp.com/api/user';
   loginUrl = 'https://raidgosql.herokuapp.com/api/login';

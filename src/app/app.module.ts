@@ -16,6 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AccountComponent } from './account/account.component';
 import { AccountNewComponent } from './account/account-new/account-new.component';
 import {AccountService} from "./account/account.service";
+import { EventDetailItemComponent } from './event/event-detail/event-detail-item/event-detail-item.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {AccountService} from "./account/account.service";
     EventItemComponent,
     EventFormComponent,
     AccountComponent,
-    AccountNewComponent
+    AccountNewComponent,
+    EventDetailItemComponent
 
   ],
   imports: [

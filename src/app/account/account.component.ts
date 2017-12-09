@@ -27,6 +27,7 @@ export class AccountComponent implements OnInit {
         (response) => {
           if (response.json().authentication === true){
             this.accountService.loggedIn = true;
+            this.accountService.user = response.json().user;
             this.accountService.loginEvent.emit(true);
             this.router.navigate(['../']);
           } else {

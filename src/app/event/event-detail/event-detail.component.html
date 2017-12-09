@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-12">
       <h2 class="pull-left">
         Pokemon: {{ event.pokemonName }}
       </h2>
       <div class="pull-right">
-      <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()" >
-        Event Wijzigen
-      </button>
+        <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()">
+          Event Wijzigen
+        </button>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-12">
       <h3>
         Gym: {{ event.gym[0].gymName }}
         <div class="pull-right">Tijd: {{ event.time | date: 'H:mm' }}</div>
@@ -25,20 +25,25 @@
   </div>
 
 
-
   <div class="row">
-    <div class="col-xs-12">
-    <h2 class="pull-left">Spelers die meedoen:</h2>
-      <div class="pull-right">
-      <button class="btn btn-success">
-        +
-      </button>
-      <button class="btn btn-danger">
-        -
-      </button>
+    <div class="col-md-12">
+      <h2 class="pull-left">Spelers die meedoen:</h2>
+      <div class="pull-right" *ngIf="loggedIn">
+        <button class="btn btn-success" type="button" *ngIf="!joined" (click)="onJoin()">
+          +
+        </button>
+        <button class="btn btn-danger" *ngIf="joined" (click)="onJoin()">
+          -
+        </button>
       </div>
-      <p *ngFor="let p of event.player">{{ p.username }} <span class="pull-right">{{ p.playerLevel }}</span></p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <app-event-detail-item *ngFor="let p of event.player" [player]="p"></app-event-detail-item>
+    </div>
+  </div>
+
 
 </div>

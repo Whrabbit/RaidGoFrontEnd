@@ -19,7 +19,9 @@ div#bs-example-navbar-collapse-1 {
   width: 60px;
 }
 
-
+.bs-dark.navbar-inverse[_ngcontent-c1][_ngcontent-c1], nav.navbar.navbar-inverse.bs-dark[_ngcontent-c1], .navbar-inverse[_ngcontent-c1], .navbar[_ngcontent-c1] {
+  background-image: url("../../assets/header.png");
+}
 
 .bs-dark.navbar-inverse {
   background-color: #222;

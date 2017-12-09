@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-12">
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <p *ngIf="!f.valid && f.touched">Vul alle velden in!</p>
+
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-md-12">
             <div class="form-group">
               <label for="userName">Gebruikersnaam:</label>
               <input
@@ -19,7 +19,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-md-12">
             <div class="form-group">
               <label for="password">Wachtwoord:</label>
               <input
@@ -34,7 +34,7 @@
         </div>
 
         <!--<div class="row">-->
-          <!--<div class="col-xs-12">-->
+          <!--<div class="col-md-12">-->
             <!--<div class="form-group">-->
               <!--<label for="password-repeat">Herhaal Wachtwoord:</label>-->
               <!--<input-->
@@ -49,7 +49,7 @@
         <!--</div>-->
 
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-md-12">
             <div class="form-group">
               <label for="level">Level Trainer Account:</label>
               <input
@@ -64,7 +64,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-md-12">
             <div class="form-group">
               <label for="gymColor">Kleur van de Gym:</label>
               <select class="selectpicker"
@@ -82,7 +82,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-md-12">
             <button
               type="submit"
               class="btn btn-success"

@@ -7,5 +7,5 @@ export class Event{
               public gym: Gym,
               public time: Date,
               public pastDate: Date,
-              public player: Player[]){}
+              public player: string[]){}
 }

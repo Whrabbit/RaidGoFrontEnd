@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Event} from "../../../model/event.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AccountService} from "../../../account/account.service";
+import {EventService} from "../../event.service";
 
 
 @Component({
@@ -10,10 +11,11 @@ import {AccountService} from "../../../account/account.service";
   styleUrls: ['./event-item.component.css']
 })
 export class EventItemComponent implements OnInit {
-
   @Input() event: Event;
   @Input() myEvent: boolean;
   loggedIn = false;
+
+
   constructor(private router: Router,
               private accountService: AccountService) { }
 
@@ -23,6 +25,7 @@ export class EventItemComponent implements OnInit {
       .subscribe((result) => {
         this.loggedIn = result;
       });
+
   }
 
   onEventClicked(){
@@ -31,7 +34,7 @@ export class EventItemComponent implements OnInit {
     }else{
       this.router.navigate(['/event',  this.event._id]);
     }
-
   }
+
 
 }
