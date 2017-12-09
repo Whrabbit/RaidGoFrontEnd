@@ -10,7 +10,7 @@ export class AccountService{
 
   url = 'https://raidgosql.herokuapp.com/api/user';
   loginUrl = 'https://raidgosql.herokuapp.com/api/login';
-
+  //
   // url = 'http://localhost:3040/api/user';
   // loginUrl = 'http://localhost:3040/api/login';
 
