@@ -8,11 +8,11 @@ export class EventService{
   eventEmit = new EventEmitter<Event[]>();
   event;
 
-  url = 'https://raidgosql.herokuapp.com/api/event';
-  urlPop = 'https://raidgosql.herokuapp.com/api/event/rp';
+  // url = 'https://raidgosql.herokuapp.com/api/event';
+  // urlPop = 'https://raidgosql.herokuapp.com/api/event/rp';
 
-  // url = 'http://localhost:3040/api/event';
-  // urlPop = 'http://localhost:3040/api/event/rp';
+  url = 'http://localhost:3040/api/event';
+  urlPop = 'http://localhost:3040/api/event/rp';
 
   private eventList: Event[] = [];
 

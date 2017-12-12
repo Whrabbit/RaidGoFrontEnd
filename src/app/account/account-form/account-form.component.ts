@@ -3,17 +3,20 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {AccountService} from "../account.service";
 import {Player} from '../../model/player.model';
+import { Observable } from 'rxjs/Observable';
+import { AlertChangesService } from '../../interface/alert-changes.service'
 
 @Component({
   selector: 'app-account-form',
   templateUrl: './account-form.component.html',
   styleUrls: ['./account-form.component.css']
 })
-export class AccountFormComponent implements OnInit {
+export class AccountFormComponent implements OnInit, AlertChangesService {
   @ViewChild('f') accountForm: NgForm;
   editAccount: Player;
 
   loggedIn = false;
+  submitted = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -34,7 +37,8 @@ export class AccountFormComponent implements OnInit {
                 gymColor: this.editAccount.gymColor
               });
             },1)
-          })
+          });
+
     } else {
         setTimeout(() => {
           this.accountForm.setValue({
@@ -52,6 +56,7 @@ export class AccountFormComponent implements OnInit {
       this.accountService.updateUser(this.editAccount.id, postAccount)
         .subscribe(
           (response) => {
+            this.submitted = true
             this.router.navigate(['myevents']);
           }
         )
@@ -68,7 +73,7 @@ export class AccountFormComponent implements OnInit {
 
   }
   onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.router.navigate(['../']);
   }
 
   ownAccount() {
@@ -83,4 +88,16 @@ export class AccountFormComponent implements OnInit {
           this.router.navigate(['/']);
         })
   }
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    if ((this.editAccount.username !==  this.accountForm.value.username||
+        this.editAccount.password !==  this.accountForm.value.password||
+        this.editAccount.level !==  this.accountForm.value.level||
+        this.editAccount.gymColor !== this.accountForm.value.gymColor)&& !this.submitted)  {
+      return confirm('Wil je de pagina verlaten zonder op te slaan?');
+    } else {
+      return true;
+    }
+  }
+
+
 }

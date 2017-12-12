@@ -9,13 +9,17 @@ import {AccountService} from "../../../account/account.service";
 })
 export class EventDetailItemComponent implements OnInit {
   @Input() player;
+  fullplayer;
 
 
-  constructor() {
+  constructor(private accountService: AccountService) {
   }
 
   ngOnInit() {
-
+    this.accountService.getAccount(this.player)
+      .subscribe((player) => {
+        this.fullplayer = player.json();
+      })
   }
 
 }
