@@ -43,7 +43,14 @@
 
   <div class="row">
     <div class="col-md-6">
-      <app-event-detail-item *ngFor="let p of event.player" [player]="p"></app-event-detail-item>
+      <h4 class="pull-left">Naam van de speler:</h4><h4 class="pull-right">Level van de speler:</h4>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-6">
+        <app-event-detail-item *ngFor="let p of event.player" [player]="p"></app-event-detail-item>
     </div>
   </div>
 
