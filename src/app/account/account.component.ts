@@ -21,7 +21,6 @@ export class AccountComponent implements OnInit {
   }
   onSubmit() {
     let loginAccount = this.loginForm.value;
-    console.log(this.loginForm.value);
     this.accountService.loginUser(loginAccount)
       .subscribe(
         (response) => {
