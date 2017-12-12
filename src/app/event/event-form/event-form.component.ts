@@ -85,33 +85,15 @@ export class EventFormComponent implements OnInit {
     }
   }
 
-  compareDates() {
-    let current = new Date();
-    let time = this.eventForm.value.time;
-    let x = time.indexOf(':');
-    let hours = time.substr(0, x);
-    let minutes = time.substr(x + 1, time.length);
-    let month = current.getMonth() + 1;
-    let monthStr = month + '';
-    if (monthStr.length < 2) {
-      monthStr = '0' + monthStr;
-    }
-    let day = current.getUTCDate() + '';
-    if (day.length < 2) {
-      day = '0' + day;
-    }
-    let dateStr = '' + current.getFullYear() + '-' + month + '-' + day + 'T' + hours + ':' + minutes + ':00Z'
-    let eventDate = new Date(dateStr);
-    let now = new Date();
-
-    return eventDate > now;
-  }
-
   getFullDate(timeString: String) {
     let current = new Date();
     let x = timeString.indexOf(':');
     let hours = timeString.substr(0, x);
     let hoursmin = parseInt(hours) -1;
+    let hourStr = hoursmin + '';
+    if (hourStr.length < 2) {
+      hourStr = '0' + hourStr;
+    }
     let minutes = timeString.substr(x + 1, timeString.length);
     let month = current.getMonth() + 1;
     let monthStr = month + '';
@@ -122,7 +104,7 @@ export class EventFormComponent implements OnInit {
     if (day.length < 2) {
       day = '0' + day;
     }
-    let dateStr = '' + current.getFullYear() + '-' + month + '-' + day + 'T' + hoursmin + ':' + minutes + ':00Z'
+    let dateStr = '' + current.getFullYear() + '-' + month + '-' + day + 'T' + hourStr + ':' + minutes + ':00Z'
     let eventDate = new Date(dateStr);
     return eventDate;
   }
