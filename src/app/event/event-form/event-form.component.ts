@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { NgForm} from '@angular/forms';
+import {NgForm} from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
 import {Event} from '../../model/event.model';
@@ -26,29 +26,28 @@ export class EventFormComponent implements OnInit {
       this.route.params
         .subscribe((Params) => {
           this.editedEvent = this.eventService.getEvent(Params['id']);
-          //timeString = this.editedEvent.time.getHours + ':' + this.editedEvent.time.getMinutes
           let timeEvent = new Date(this.editedEvent.time);
           timeString = this.twonumdidgit(timeEvent.getHours()) + ':' + this.twonumdidgit(timeEvent.getMinutes());
         });
-     setTimeout(() => {
-       this.eventForm.setValue({
-         pokemonName: this.editedEvent.pokemonName,
-         gymName: this.editedEvent.gym[0].gymName,
-         gymColor: this.editedEvent.gym[0].gymColor,
-         time: timeString
-       });
+      setTimeout(() => {
+        this.eventForm.setValue({
+          pokemonName: this.editedEvent.pokemonName,
+          gymName: this.editedEvent.gym[0].gymName,
+          gymColor: this.editedEvent.gym[0].gymColor,
+          time: timeString
+        });
 
-     },1)
+      }, 1)
     } else {
       setTimeout(() => {
         this.eventForm.setValue({
           pokemonName: '',
           gymName: '',
-          gymColor:'',
+          gymColor: '',
           time: ''
         });
 
-      },1)
+      }, 1)
     }
 
   }
@@ -78,9 +77,9 @@ export class EventFormComponent implements OnInit {
   }
 
   onCancel() {
-    if(this.ownEvent()){
+    if (this.ownEvent()) {
       this.router.navigate(['myevents']);
-    }else{
+    } else {
       this.router.navigate(['../'], {relativeTo: this.route});
     }
   }
@@ -89,7 +88,7 @@ export class EventFormComponent implements OnInit {
     let current = new Date();
     let x = timeString.indexOf(':');
     let hours = timeString.substr(0, x);
-    let hoursmin = parseInt(hours) -1;
+    let hoursmin = parseInt(hours) - 1;
     let hourStr = hoursmin + '';
     if (hourStr.length < 2) {
       hourStr = '0' + hourStr;
@@ -109,9 +108,9 @@ export class EventFormComponent implements OnInit {
     return eventDate;
   }
 
-  twonumdidgit(singleDidgit: any){
+  twonumdidgit(singleDidgit: any) {
     let result = singleDidgit + '';
-    if(result.length === 1){
+    if (result.length === 1) {
       result = '0' + singleDidgit;
     }
     return result
@@ -120,7 +119,6 @@ export class EventFormComponent implements OnInit {
   ownEvent() {
     return window.location.href.indexOf('myevent/edit') !== -1;
   }
-
 
 
 }

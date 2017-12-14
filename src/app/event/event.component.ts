@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import { Event } from "../model/event.model";
-import {EventService} from "./event.service";
 
 @Component({
   selector: 'app-event',

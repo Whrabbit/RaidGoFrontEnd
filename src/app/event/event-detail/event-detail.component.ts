@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Event} from '../../model/event.model'
 import {ActivatedRoute, Router} from "@angular/router";
 import {EventService} from "../event.service";
-import {Player} from "../../model/player.model";
 import {AccountService} from "../../account/account.service";
 
 @Component({

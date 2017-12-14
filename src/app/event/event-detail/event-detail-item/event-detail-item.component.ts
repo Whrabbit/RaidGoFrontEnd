@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Player} from "../../../model/player.model";
 import {AccountService} from "../../../account/account.service";
 
 @Component({

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {AccountService} from "../account.service";
 import {Player} from '../../model/player.model';
@@ -14,12 +14,12 @@ import { AlertChangesService } from '../../interface/alert-changes.service'
 export class AccountFormComponent implements OnInit, AlertChangesService {
   @ViewChild('f') accountForm: NgForm;
   editAccount: Player;
+  usernameExist: boolean;
 
   loggedIn = false;
   submitted = false;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
+  constructor(private router: Router,
               private accountService: AccountService) { }
 
   ngOnInit() {
@@ -56,17 +56,22 @@ export class AccountFormComponent implements OnInit, AlertChangesService {
       this.accountService.updateUser(this.editAccount.id, postAccount)
         .subscribe(
           (response) => {
-            this.submitted = true
+            this.submitted = true;
             this.router.navigate(['myevents']);
           }
         )
 
     } else {
       let postAccount = this.accountForm.value;
+      this.usernameExist = true;
       this.accountService.addUser(postAccount)
         .subscribe(
           (response) => {
-            this.router.navigate(['login']);
+            if (response.json().error !== undefined){
+            }else {
+              this.router.navigate(['login']);
+            }
+
           }
         )
     }

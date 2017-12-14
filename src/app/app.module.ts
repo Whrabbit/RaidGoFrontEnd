@@ -18,7 +18,7 @@ import { AccountFormComponent } from './account/account-form/account-form.compon
 import { AccountService } from "./account/account.service";
 import { EventDetailItemComponent } from './event/event-detail/event-detail-item/event-detail-item.component';
 import { ColorDirective } from "./directives/color.directive";
-import {CanDeactivateGuard} from "./interface/alert-changes.service";
+import { CanDeactivateGuard } from "./interface/alert-changes.service";
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
