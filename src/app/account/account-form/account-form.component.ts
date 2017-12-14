@@ -58,24 +58,20 @@ export class AccountFormComponent implements OnInit, AlertChangesService {
           (response) => {
             this.submitted = true;
             this.router.navigate(['myevents']);
-          }
-        )
+          })
 
     } else {
       let postAccount = this.accountForm.value;
-      this.usernameExist = true;
       this.accountService.addUser(postAccount)
         .subscribe(
           (response) => {
             if (response.json().error !== undefined){
+              this.usernameExist = true;
             }else {
               this.router.navigate(['login']);
             }
-
-          }
-        )
+          })
     }
-
   }
   onCancel() {
     this.router.navigate(['../']);
