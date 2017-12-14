@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="pull-left">
-        <span [colorDir]="'pink'">Pokemon: {{ event.pokemonName }}</span>
+        <!--<span [colorDir]="'pink'">Pokemon: {{ event.pokemonName }}</span>-->
+        <span>Pokemon: {{ event.pokemonName }}</span>
       </h2>
       <div class="pull-right">
         <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()">
