@@ -42,7 +42,14 @@ export class EventDetailComponent implements OnInit {
   onEditEvent(id: string) {
     this.router.navigate(['myevent/edit', this.event._id]);
   }
-
+  onDeleteEvent(){
+    this.eventService.removeEvent(this.event._id)
+      .subscribe(
+        (response) => {
+          this.router.navigate(['/']);
+        }
+      )
+  }
 
   ownEvent() {
     return window.location.href.indexOf('myevent') !== -1;

@@ -8,6 +8,9 @@
         <button class="btn btn-warning" *ngIf="ownEvent()" (click)="onEditEvent()">
           Event Wijzigen
         </button>
+        <button class="btn btn-danger" *ngIf="ownEvent()" (click)="onDeleteEvent()">
+          Event Verwijderen
+        </button>
       </div>
     </div>
   </div>
