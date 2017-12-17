@@ -58,5 +58,8 @@ export class EventService{
     return this.http.put(this.urlPop + '/' + id, {event: event, playerId: player.id});
   }
 
+  removeEvent(id: string){
+    return this.http.delete(this.url + '/' + id);
+  }
 
 }
