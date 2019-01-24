@@ -103,7 +103,7 @@ export class EventFormComponent implements OnInit {
     if (day.length < 2) {
       day = '0' + day;
     }
-    let dateStr = '' + current.getFullYear() + '-' + month + '-' + day + 'T' + hourStr + ':' + minutes + ':00Z'
+    let dateStr = '' + current.getFullYear() + '-' + month + '-' + day + 'T' + hourStr + ':' + minutes + ':00Z';
     let eventDate = new Date(dateStr);
     return eventDate;
   }
